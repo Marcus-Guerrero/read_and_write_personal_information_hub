@@ -1,4 +1,26 @@
 #Open a text file
+with open("personal_info.txt", "a") as info_lib:
+    personne= []
+    while True:
+        while len(personne) != 5:
+            info= input("Provide us a minimum of five personal information about you: ")
+            personne.append(info)
+
+        entry= input("Would you like to store another set of information (y/n)? ")
+        while True:
+            if entry == "y":
+                print("Please store another set of info")
+                break
+            elif entry == "n":
+                break
+            elif entry != "y" and entry != "n":
+                print ("Wrong format")
+        if entry == "n":
+            break
+
+    for pers in personne:
+        info_lib.write(pers)
+
 #Place a loop
 #Create five input statements
 #Create conditions to end the loop
