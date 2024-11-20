@@ -2,9 +2,25 @@
 with open("personal_info.txt", "a") as info_lib:
     personne= []
     while True:
-        while len(personne) != 5:
-            info= input("Provide us a minimum of five personal information about you: ")
-            personne.append(info)
+        while True:
+            while True:
+                info= input("Provide us a minimum of five personal information about you: ")
+                personne.append(info)
+                if len(personne) >=5:
+                    break
+
+            add = input("Would you like to input more data (y/n)? ")
+            while True:
+                if add == "y":
+                    print ("Add more data")
+                    break
+                elif add == "n":
+                    break
+                elif add != "y" and add != "n":
+                    print ("Wrong Format, try again")
+            if add == "n":
+                break
+
 
         entry= input("Would you like to store another set of information (y/n)? ")
         while True:
